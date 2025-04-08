@@ -1,0 +1,9 @@
+**/*.duckdb
+/logs
+/raw_files/*.parquet
+
+
+dbt_new_york_taxi/target/
+dbt_new_york_taxi/dbt_packages/
+dbt_new_york_taxi/logs/
+dbt_new_york_taxi/.user.yml

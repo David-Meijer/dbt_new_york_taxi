@@ -1,0 +1,10 @@
+dbt_new_york_taxi:
+  target: local
+  outputs:
+    local:
+      type: duckdb
+      path: ../database.duckdb
+      threads: 4
+      attach:
+        - path: '../raw_files/raw_database.duckdb'
+          alias: raw_database

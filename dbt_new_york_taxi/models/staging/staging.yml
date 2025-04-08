@@ -1,0 +1,71 @@
+version: 2
+
+models:
+  ########################
+  #stg.yellow_trips table#
+  ########################
+  - name: yellow_trips
+    description: Ney York taxi yellow trips data
+    columns:
+      #file:///C:/Users/david/OneDrive/Bureaublad/dbt_reference_project/dbt_reference_project/raw_files/data_dictionary_trip_records_yellow.pdf
+    columns:
+      - name: VendorID
+        description: "{{ doc('yellow_trips_vendorid_desc') }}" # Uses doc block for table
+
+      - name: tpep_pickup_datetime
+        description: The date and time when the meter was engaged. `tpep` stands for a kind of meter
+
+      - name: tpep_dropoff_datetime
+        description: The date and time when the meter was disengaged. `tpep` stands for a kind of meter
+
+      - name: passenger_count
+        description: The number of passengers in the vehicle
+
+      - name: trip_distance
+        description: The elapsed trip distance in miles reported by the taximeter
+
+      - name: RatecodeID
+        description: "{{ doc('yellow_trips_ratecodeid_desc') }}" # Uses doc block for table
+
+      - name: store_and_fwd_flag
+        description: "{{ doc('yellow_trips_store_and_fwd_flag_desc') }}" # Uses doc block for table
+
+      - name: PULocationID
+        description: TLC Taxi Zone ID in which the taximeter was engaged (pickup location)
+      
+      - name: DOLocationID
+        description: TLC Taxi Zone ID in which the taximeter was disengaged (dropoff location)
+      
+      - name: payment_type
+        description: "{{ doc('yellow_trips_payment_type_desc') }}" # Uses doc block for table
+      
+      - name: fare_amount
+        description: The time-and-distance fare calculated by the meter. Does not include taxes, surcharges, or tips
+      
+      - name: extra
+        description: Miscellaneous extras and surcharges (e.g., rush hour, overnight)
+      
+      - name: mta_tax
+        description: MTA tax automatically triggered based on the metered rate
+      
+      - name: tip_amount
+        description: Tip amount. Automatically populated for credit card tips. Cash tips are not included
+      
+      - name: tolls_amount
+        description: Total amount of all tolls paid in the trip
+      
+      - name: improvement_surcharge
+        description: Improvement surcharge assessed trips at the flag drop (e.g., $0.30, $1.00)
+      
+      - name: total_amount
+        description: The total amount charged to passengers, excluding cash tips
+      
+      - name: congestion_surcharge
+        description: Total amount collected in trip for NYS congestion surcharge (typically $2.50 for trips in designated Manhattan zones)
+    
+      - name: airport_fee
+        description: Airport fee (e.g., $1.25) applied for pickups ONLY at LaGuardia (LGA) and John F. Kennedy (JFK) Airports
+
+
+
+
